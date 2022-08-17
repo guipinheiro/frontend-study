@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			#field {
+				width: 200px;
+				height: 150px;
+				border: 10px solid black;
+				background-color: #00ff00;
+				overflow: hidden;
+				display: block;
+				position: relative;
+			}
+
+			#field:hover {
+				cursor: pointer;
+			}
+
+			#ball {
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: 1s all;
+				height: 40px;
+				width: 40px;
+			}
+		</style>
+	</head>
+
+	<body style="height: 2000px">
+		Click on a field to move the ball there.
+		<br />
+		The ball should never leave the field.
+
+		<div id="field">
+			<img src="https://en.js.cx/clipart/ball.svg" id="ball" /> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+			. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+			. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+			. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+		</div>
+	</body>
+
+	<script>
+		const ball = document.getElementById("ball");
+		const field = document.getElementById("field");
+
+		field.addEventListener("click", function (event) {
+			let fieldCoords = this.getBoundingClientRect(); //Start Positions of the field
+			let clickX = event.clientX; //X Position of the click
+			let clickY = event.clientY; //Y Position of the click
+
+			//fieldCoords.top .left: Coordinates relative to the viewport
+			//field.clientTop .clientLeft: border size. Area that lies between two locations (offsetTop/offsetLeft and client Top/Left area). offsetTop indicates the location of the top border (not the margin) while client area starts immediatly below the border. The same for left
+			let ballCoords = {
+				top: clickY - fieldCoords.top - field.clientTop - ball.clientHeight / 2,
+				left: clickX - fieldCoords.left - field.clientLeft - ball.clientWidth / 2,
+			};
+
+			//Preventing crossing top border:
+			if (ballCoords.top < 0) {
+				ballCoords.top = 0;
+			}
+
+			//Preventing crossing left border:
+			if (ballCoords.left < 0) {
+				ballCoords.left = 0;
+			}
+
+			//Preventing crossing bottom border:
+			if (ballCoords.top + ball.clientHeight > field.clientHeight) {
+				ballCoords.top = field.clientHeight - ball.clientHeight;
+			}
+
+			//Preventing crossing right border:
+			if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+				ballCoords.left = field.clientWidth - ball.clientWidth;
+			}
+
+			ball.style.top = ballCoords.top + "px";
+			ball.style.left = ballCoords.left + "px";
+		});
+	</script>
+</html>
+

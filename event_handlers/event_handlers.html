@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				font-family: Helvetica, sans-serif;
+				line-height: 1;
+			}
+
+			h1,
+			h2 {
+				margin: 10px 0px;
+			}
+
+			button {
+				width: 10rem;
+				text-transform: uppercase;
+				height: 2.5rem;
+				width: 200px;
+			}
+
+			.button-wrapper {
+				display: flex;
+				gap: 5px;
+			}
+
+			.work {
+				background-color: rgb(175, 238, 216);
+			}
+
+			.not-work {
+				background-color: rgb(238, 175, 175);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Event handlers</h1>
+		<h2>Difference between JS event handlers and HTML</h2>
+		<div class="button-wrapper">
+			<button id="js-with-par" class="not-work">JS <b>WITH</b> PARENTHESIS</button>
+			<button id="js-no-par" class="work">JS <b>WITHOUT</b> PARENTHESIS</button>
+			<script>
+				function heyHTML() {
+					alert("Hey HTML");
+				}
+			</script>
+			<button id="html-with-par" onclick="heyHTML()" class="work">HTML <b>WITH</b> PARENTHESIS</button>
+			<!--Works -->
+			<button id="html-no-par" onclick="heyHTML" class="not-work">HTML <b>WITHOUT</b> PARENTHESIS</button>
+			<!--Does not work -->
+		</div>
+
+		<h2>Using multiple handlers</h2>
+		<div class="button-wrapper">
+			<button id="js-onclick-only" class="not-work">Multiple <b>onclicks</b></button>
+			<button id="js-addEventListener-only" class="work">Multiple <b>addEventListener</b></button>
+		</div>
+
+		<h2>Removing Event Handlers</h2>
+		<div class="button-wrapper">
+			<button id="without-function" class="not-work"><b>Different</b> objects (function)</button>
+			<button id="with-function" class="work"><b>Same</b> objects (function)</button>
+		</div>
+
+		<h2>Event Objects</h2>
+		<button id="event-object" class="work">Click Me - Using <b>function</b> handler</button>
+
+		<h2>Object Handlers</h2>
+		<div class="button-wrapper">
+			<button id="object-handler" class="work">Click Me - Using <b>object</b> handler</button>
+			<button id="class-handler" class="work">Click Me <b>Slowly</b> - Using <b>class</b> handler</button>
+		</div>
+	</body>
+
+	<script src="event_handlers.js"></script>
+</html>
+

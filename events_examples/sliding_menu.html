@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			ul.visible > li {
+				display: relative;
+			}
+
+			ul.hidden > li {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<span id="sweeties-title">▶ Sweeties (click me)!</span>
+		<ul class="hidden" id="sweeties-list">
+			<li>Cake</li>
+			<li>Donut</li>
+			<li>Honey</li>
+		</ul>
+	</body>
+
+	<script>
+		let sweetiesTitle = document.getElementById("sweeties-title");
+		let sweetiesList = document.getElementById("sweeties-list");
+
+		sweetiesTitle.addEventListener("click", function () {
+			if (sweetiesList.classList.contains("visible")) {
+				sweetiesList.classList.add("hidden");
+				sweetiesList.classList.remove("visible");
+				sweetiesTitle.innerText = "▶ Sweeties (click me)!";
+			} else {
+				sweetiesList.classList.add("visible");
+				sweetiesList.classList.remove("hidden");
+				sweetiesTitle.innerText = "▼ Sweeties (click me)!";
+			}
+		});
+	</script>
+</html>
+
