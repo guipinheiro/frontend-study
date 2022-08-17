@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<style></style>
+	</head>
+	<body>
+		<!--Bubbling example. Here, after the event happen, it will be replicated to all ancestors of the element-->
+		<h1>Bubbling and Capturing</h1>
+		<h2>Bubbling</h2>
+		<span>
+			When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on
+			other ancestors.
+		</span>
+		<form onclick="alert('form')" class="bubble">
+			FORM - Clicking on me will only execute form
+			<div onclick="alert('div')" class="bubble">
+				DIV - Clicking on me will execute alerts div > form
+				<p onclick="alert('p')" class="bubble">P - Clicking on me will execute all alerts from p > div > form</p>
+			</div>
+		</form>
+
+		<h2>event.target</h2>
+		<span>A handler on the parent element can identify where the event happened</span>
+
+		<form id="form-target" class="target">
+			FORM
+			<div class="target">
+				DIV
+				<p class="target">P</p>
+			</div>
+		</form>
+
+		<h2>How to stop bubbling</h2>
+		<form class="stop-bubbling" onclick="alert('bubbling does not reach here when clicking on the button')">
+			The form has an event. Click on it then click on the button:
+			<button class="stop-bubbling" onclick="event.stopPropagation()">
+				Click me. I have event.stopPropagation(), then it won't bubble
+			</button>
+		</form>
+
+		<h2>Capturing</h2>
+		<span>If you let capture = true on event handlers, the event will happen on capture phase instead of bubble phase</span>
+		<form class="capture">
+			FORM
+			<div class="capture">
+				DIV
+				<p class="capture">P</p>
+			</div>
+		</form>
+	</body>
+	<script src="bubbling_and_capturing.js"></script>
+</html>
+

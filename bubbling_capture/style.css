@@ -1,0 +1,42 @@
+body {
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 10px;
+}
+
+h1, h2 {
+    margin: 10px 0px
+}
+
+form,
+div,
+p {
+    border: 1px solid gray;
+    padding: 5px;
+    margin: 1px;
+    line-height: 2;
+}
+
+span {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+form.target {
+    width: 200px;
+    text-align: center;
+    background-color: rgb(16, 16, 110);
+}
+
+div.target {
+    background-color: rgb(11, 73, 11);
+}
+
+p.target {
+    background-color: rgb(106, 13, 13);
+}
+
+.target {
+    color: white;
+}
