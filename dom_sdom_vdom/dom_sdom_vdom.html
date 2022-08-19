@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>What is DOM?</title>
+	</head>
+	<body>
+		<h1>What is DOM, Shadow DOM and Virtual DOM</h1>
+		<h2>DOM</h2>
+		<p>We can access them via the DOM API like this one document.body.p</p>
+
+		<h2>Shadow DOM</h2>
+		<p>
+			Here we have custom elements like in the video tag such as the play button that is not accessible through the dom API
+		</p>
+		<video controls width="600">
+			<source src="digimon_op_short.mp4" type="video/mp4" />
+		</video>
+		<p>If you inspect the buttons of the video, you will see they are not available as an object of the DOM</p>
+		<p>This video component is a custom component created by the browser through the Shadow DOM</p>
+		<p>Chrome, for instance, does not show the shadow DOM by default, but you can enable them through its settings</p>
+
+		<h2>Virtual DOM</h2>
+		<p>DOM Manipulation is heavy</p>
+		<p>
+			Sometimes, changing variables them applying them immediatly on the DOM can be very slow, specially when nowadays
+			modern frontend websites are JS heavy.
+		</p>
+		<p>
+			So, to counter that, some frameworks create a virtual DOM, which is an abstraction of the DOM, where an ideal
+			representation of the DOM is kept in memory than synced with the actual DOM
+		</p>
+		<p>React.JS is one of the frameworks that have a Virtual DOM to boost performance and cross-browser compatibility</p>
+		<a href="https://reactjs.org/docs/dom-elements.html">React DOM Elements Docs</a>
+	</body>
+</html>
+
