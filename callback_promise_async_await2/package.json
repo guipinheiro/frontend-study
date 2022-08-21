@@ -1,0 +1,20 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "package for ESM JS",
+  "main": "script.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guipinheiro/frontend-study/callback_promise_async_await2"
+  },
+  "keywords": [
+    "fetch",
+    "api"
+  ],
+  "author": "Guilherme Pinheiro",
+  "license": "UNLICENSED"
+}
