@@ -1,0 +1,11 @@
+@import "../node_modules/animate.css/animate.css"; */
+
+.card {
+    padding: 5px;
+    gap: 5px;
+    align-items: center;
+}
+
+.btn-light {
+    border: 1px solid rgb(142, 142, 142);
+}
