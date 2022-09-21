@@ -1,0 +1,89 @@
+$text-color: blue;
+
+//Creating SASS mixins to help with a declaration that will be used multiple times
+@mixin border($size, $type, $color) {
+    -webkit-border: $size $type $color;
+    -moz-border: $size $type $color;
+    -ms-border: $size $type $color;
+    border: $size $type $color;
+}
+
+//Applying if and else if statements 
+@mixin text-effect($val) {
+    @if $val == danger {
+        color: red;
+    } @else if $val == alert {
+        color: yellow;
+    } @else if $val == success {
+        color: green;
+    } @else {
+        color: black;
+    }
+}
+
+// Nesting items with sass
+.blog-post {
+    h1 {
+        text-align: center;
+        color: $text-color;
+    }
+
+    p {
+        font-size: 30px;
+        @include border(1px, solid, blue);
+        @include text-effect(success);
+    }
+}
+
+//Using for loops
+// "start to end" and "start through end", to end will not affect the last element (exclusive), and through end will (inclusive)
+
+@for $i from 1 through 6 {
+    .comment-#{$i} {
+        font-size: 25px;
+        text-transform: capitalize;
+    }
+}
+
+//Using a while syntax similar to the while loop in JS
+// $x: 1;
+// @while $x < 6 {
+//   .comment-#{$x} {font-size: 15px * $x}
+//   $x: $x + 1;
+// }
+
+//Creating a list of elements and looping over it using @each
+@each $color in gray, white {
+    .#{$color}-bg {
+        background-color: $color;
+    }
+}
+
+//Using the map syntax to loop through a list of elements. The syntax is like this:
+// $colors: (color1: blue, color2: red, color3: green);
+
+// @each $key, $color in $colors {
+//   .#{$color}-text {color: $color;}
+// }
+
+//Importing other smaller (modules) scss files (called partials) into your main file 
+@import "mixins";
+
+div.comments * {
+    @include font-family(Helvetica, sans-serif);
+}
+
+//Extending one set of CSS Styles to another element
+h3{
+    text-align: center;
+  }
+  .info{
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+
+  .info-important {
+    @extend .info;
+    background-color: magenta;
+  }

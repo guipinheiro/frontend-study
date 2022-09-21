@@ -1,0 +1,6 @@
+@mixin font-family($primary, $secondary) {
+    -webkit-font-family: $primary, $secondary;
+    -moz-font-family: $primary, $secondary;
+    -ms-font-family: $primary, $secondary;
+    font-family: $primary, $secondary;
+}

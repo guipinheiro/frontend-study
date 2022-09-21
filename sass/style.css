@@ -1,0 +1,73 @@
+.blog-post h1 {
+  text-align: center;
+  color: blue;
+}
+.blog-post p {
+  font-size: 30px;
+  -webkit-border: 1px solid blue;
+  -moz-border: 1px solid blue;
+  -ms-border: 1px solid blue;
+  border: 1px solid blue;
+  color: green;
+}
+
+.comment-1 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.comment-2 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.comment-3 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.comment-4 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.comment-5 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.comment-6 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.gray-bg {
+  background-color: gray;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+div.comments * {
+  -webkit-font-family: Helvetica, sans-serif;
+  -moz-font-family: Helvetica, sans-serif;
+  -ms-font-family: Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
+}
+
+h3 {
+  text-align: center;
+}
+
+.info, .info-important {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.info-important {
+  background-color: magenta;
+}
+
+/*# sourceMappingURL=style.css.map */
